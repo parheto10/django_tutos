@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-4">
+            {% if user.userprofile.image %}
+                <img src="{{ user.userprofile.image.url }}" class="avatar img-circle img-thumbnail" alt="{{ user.userprofile.user }}"height="200" width="200">
+            {% endif %}
+        </div>
+        <div class="col-md-8">
+            <p>
+                <p>Utilisateur : {{ user }}</p>
+                <p>Nom : {{ user.last_name }}</p>
+                <p>Prénoms : {{ user.first_name }}</p>
+                <p>Courriel : {{ user.email }}</p>
+            </p>
+            <p>Description : {{ user.userprofile.description }}</p>
+            <p>Contacts : {{ user.userprofile.contacts }}</p>
+            <p>Résident à : {{ user.userprofile.ville }}</p>
+            <p>Site Web : <a href="{{ user.userprofile.site_web }}">{{ user.userprofile.site_web }}</a></p>
+        </div>
+    </div>
+{% endblock %}

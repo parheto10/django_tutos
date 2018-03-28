@@ -1,0 +1,34 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Friendship</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+      {% if user.is_authenticated %}
+        <ul class="nav navbar-nav">
+            <li><a href="{% url 'comptes:home' %}">Acceuil</a></li>
+            <li><a href="{% url 'comptes:profile' %}">Profile</a></li>
+            <li><a href="{% url 'comptes:edit' %}">Modifier Profile</a></li>
+            <li><a href="{% url 'comptes:passe_change' %}">Change Passe</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="{% url 'comptes:logout' %}">Déconnexion</a></li>
+        </ul>
+      {% else %}
+        <ul class="nav navbar-nav">
+            <li><a href="{% url 'comptes:password_reset' %}">Réinitialiser Passe</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="{% url 'comptes:login' %}">Connexion</a></li>
+            <li><a href="{% url 'comptes:register' %}">Inscription</a></li>
+        </ul>
+      {% endif %}
+      </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+  </nav>

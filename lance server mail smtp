@@ -1,0 +1,1 @@
+python -m smtpd -n -c DebbuggingServer localhost:1025

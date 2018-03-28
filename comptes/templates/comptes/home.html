@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+            <h1>Bienvenus {{ user.username }}</h1>
+    {% endif %}
+        <p class="lead">Quoi de neuf ??</p>
+{% endblock %}
